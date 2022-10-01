@@ -210,7 +210,8 @@ A parent provides scope for its children and they are called in this scope. This
 * when the parent is cancelled, the child coroutines are cancelled too
 * when a child raises an error it destroys the parent as well
 
-
+Note:
+*runBlocking*{} is not an extension function on CoroutineScope. This means it can't be a child and it can only be the root coroutine (the root of all other coroutines in the hierarchy)
 
 
 ## Dispatchers
