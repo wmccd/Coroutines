@@ -144,7 +144,7 @@ When you run launch(), aync() or runBlocking, you are generate a CoroutineScope 
     }
     
 
-<img width="716" alt="Screenshot 2022-10-01 at 10 35 31" src="https://user-images.githubusercontent.com/13928099/193403219-f72de686-8307-4259-960d-fc3290836d3f.png">
+<img width="733" alt="Screenshot 2022-10-01 at 11 08 26" src="https://user-images.githubusercontent.com/13928099/193404295-9bcf7dcf-b838-4e5c-a754-8f0099181224.png">
 
 These are scopes you can use to start *launch* and *async*:    
 
