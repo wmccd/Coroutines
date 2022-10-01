@@ -178,6 +178,40 @@ If you have a repository function that requires two pieces of data to be fetch a
     //coroutineScope 42
     //coroutineScope 4
     
+    
+## Structured Concurrency    
+
+This is all about parents and children, and the inheritence of CoroutineScope.
+
+
+    fun main(){
+    	runBlocking{ //Parent providing CoroutineScope
+    		launch{   //Child inheriting CoroutineScope
+    			delay(100)
+    			println("Hello")
+    		}
+    		launch{ //Also child. Same as this.launch
+    			delay(200)
+    			println("World")
+    		}
+    		println("Ahoy")
+    	}
+    }
+    //Ahoy
+    //100ms delay
+    //Hello
+    //100ms delay
+	//World    
+
+A parent provides scope for its children and they are called in this scope. This leads to a relationship called *Structured Concurrency*. The rules that appy:
+
+* children inherit context from their parent
+* a parent suspends until all the children are finished
+* when the parent is cancelled, the child coroutines are cancelled too
+* when a child raises an error it destroys the parent as well
+
+
+
 
 ## Dispatchers
 

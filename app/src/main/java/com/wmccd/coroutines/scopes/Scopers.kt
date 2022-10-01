@@ -24,6 +24,16 @@ class Scopers {
 
     class VMS: ViewModel(){}
     private fun allScopes(lifecycleScope: LifecycleCoroutineScope) {
+
+        runBlocking {
+            println("I am not an extension function on CoroutineScope. I am the root coroutine")
+            println("My use case is very different than other coroutines")
+            launch {
+            }
+            async{
+            }
+        }
+
         GlobalScope.launch {
             println("I last as long as the app")
         }
