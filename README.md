@@ -142,10 +142,10 @@ When you run launch(), aync() or runBlocking, you are generate a CoroutineScope 
     GlobalScope.async{
     	//this: CoroutineScope
     }
-
-
-    <img width="716" alt="Screenshot 2022-10-01 at 10 35 31" src="https://user-images.githubusercontent.com/13928099/193403219-f72de686-8307-4259-960d-fc3290836d3f.png">
     
+
+<img width="716" alt="Screenshot 2022-10-01 at 10 35 31" src="https://user-images.githubusercontent.com/13928099/193403219-f72de686-8307-4259-960d-fc3290836d3f.png">
+
 These are scopes you can use to start *launch* and *async*:    
 
 * **GlobalScope**: Lasts the lifetime of the app. Can result in memory leaks. Avoid.
